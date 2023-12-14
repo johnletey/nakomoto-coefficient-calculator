@@ -33,6 +33,7 @@ const (
 	MATIC Token = "MATIC"
 	MINA  Token = "MINA"
 	NEAR  Token = "NEAR"
+	NOBLE Token = "NOBLE"
 	OSMO  Token = "OSMO"
 	PLS   Token = "PLS"
 	REGEN Token = "REGEN"
@@ -72,6 +73,8 @@ func (t Token) ChainName() string {
 		return "Mina Protocol"
 	case NEAR:
 		return "Near Protocol"
+	case NOBLE:
+		return "Noble"
 	case OSMO:
 		return "Osmosis"
 	case PLS:
@@ -153,6 +156,8 @@ func newValues(token Token) (int, error) {
 		currVal, err = Mina()
 	case NEAR:
 		currVal, err = Near()
+	case NOBLE:
+		currVal, err = Noble()
 	case OSMO:
 		currVal, err = Osmosis()
 	case PLS:
